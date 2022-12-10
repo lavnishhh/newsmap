@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@media only screen and (max-width:1200px) {
+    .map-holder{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 90%;
+    }
+    .map{
+        width: 100%;
+        height: 70%;
+    }
+
+    .map-info-text{
+        display: flex;
+        flex-direction: column;
+    }
+    .toolbar{
+        display: flex;
+        flex-direction: row;
+        height: calc(30% + 50px);
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .source-type{
+        display: flex;
+        width: 0px;
+        flex-direction: row;
+        justify-content: center;
+        padding:0px 0px 0px 5px;
+    }
+
+    .sources-info{
+        display: flex;
+        width: 80px;
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+
+    .loc-type{
+        background-color: #7F167F;
+        display: flex;
+        flex-direction: row;
+        overflow-x: hidden;
+    }
+    
+    .source-list{
+        display: flex;
+        width: 75px;
+        flex-direction: column;
+        background-color: #FFF;
+        overflow-y: scroll;
+    }
+
+    .news-list{
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        background-color: #FFF;
+        flex: 1;
+    }
+
+    .news-item > div > a > img{
+        width: 220px;
+        height: 12vh;
+        border-radius: 10px;
+    }
+    
+    .news-item > a{
+        display: block;
+        margin: 0px;
+        font-size: 0.9em;
+        word-wrap: break-word;
+        overflow: hidden;
+        text-decoration: none;
+        color: black;
+        z-index: 9999;
+        width: 220px;
+    }
+
+    @media only screen and (max-width: 810px){
+        .news-item > div > a > img{
+            width: 150px;
+            height: 12vh;
+            border-radius: 10px;
+        }
+        
+        .news-item > a{
+            display: block;
+            margin: 0px;
+            font-size: 0.9em;
+            word-wrap: break-word;
+            overflow: hidden;
+            text-decoration: none;
+            color: black;
+            z-index: 9999;
+            width: 150px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1201px ) {
+    .map-holder{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 90vh;
+    }
+    
+    .map{
+        width: 75vw;
+        height: 90vh;
+    }
+    .map-info-text{
+        display: flex;
+        flex-direction: row;
+    }
+    .toolbar{
+        background-color: rgb(176, 181, 255);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 90vh;
+        width: 25vw;
+        overflow: hidden;
+    }
+
+    .source-type{
+        display: flex;
+        flex-direction: column;
+        padding:0px 0px 0px 20px;
+    }
+
+    .sources-info{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 20vh;
+        overflow-y: scroll;
+    }
+
+    .loc-type{
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        background-color: rgb(228, 230, 255);
+
+    }
+
+    .source-list{
+        width: 70px;
+        margin-left: 10px;
+        padding: 0%;
+        height: calc(100vh - 100px);
+        overflow-y: scroll;
+    }
+    
+    .news-list{
+        display: flex;
+        flex-direction: column;
+        flex:1;
+        height: calc(100vh - 100px);
+        overflow-y: scroll;
+        width: calc(25vw - 90px)
+    }
+    
+    .news-item > div > a > img{
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .news-item > a{
+        display: block;
+        font-size: 0.9em;
+        text-decoration: none;
+        color: black;
+    }
+}
+html,body{
+    scroll-behavior: smooth;
+    font-family: 'Poppins';
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    height: calc(100% - 10px);
+}
+
+.news-item{
+    width:fit-content;
+    display: block;
+    margin: 20px 10px 0px 10px;
+    border-radius: 20px;
+}
+
+.sources-info > div > .source-logo{
+    margin-left: 4px;
+}
+ 
+.source-logo{
+    background-color: white;
+    width: 45px;
+    height: 45px;
+    border-radius:50%;
+    margin:20px 0px 0px 0px;
+    
+    border: 5px solid rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    flex-shrink: 0;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.source-logo-hover{
+    border-color: rgb(166, 166, 166);
+}
+
+.source-logo-selected{
+    border-color: rgb(68, 68, 68);
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin: 10px;
+    width: 0px;
+    height: 0px;
+    transition: all 0.5s;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+  
+::-webkit-scrollbar-track {
+background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+background-color: #5c5c5c;
+border-radius: 15px;
+border: 5px solid transparent;
+background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background-color: #000000;
+border-radius: 15px;
+border: 4px solid transparent;
+background-clip: content-box;
+}

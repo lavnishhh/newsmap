@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Newsmap</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <!-- Reference to the Bing Maps SDK -->
+    <script type='text/javascript'
+            src='https://www.bing.com/api/maps/mapcontrol?callback=initMap' 
+            async defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <div class="message" style="display: none;" id="signOutBox">
+        <h1>Sign out?</h1>
+        <div class="yn">
+            <div style="color: hsl(0, 100%, 70%);" id="signOutButton">Sign out</div>
+            <div id="cancelButton">Nah, nvm</div>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="place-data">
+            <a id="place_name" style="font-size: 0.9em;">India</a>
+            <a id="cordinates"style="font-size: small;"></a>
+        </div>
+        <div class="query-search">
+            <div class="search-box">
+                <div class="search" tabindex="1" id="source-search">Source</div>
+                <div class="menu" id="source-search-menu">
+                    <div class="menu-item" sourceid="all">All</div>
+                </div>
+            </div>
+            <div class="search-box">
+                <div class="search" tabindex="1" id="loc-search">Location</div>
+                <div class="menu" id="loc-search-menu">
+                </div>
+            </div>
+        </div>
+        <div class="nav-menu">
+            <div class="menu-button" id="menu-button" tabindex="1">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="menu" id="settings-menu">
+                <div class="profile">
+                    <div class="account" style="display: flex; align-items: center; text-align: center; height: 100%; margin:0px 20px 20px 20px" id="googleSignInButton">
+                        <div id="g_id_onload"
+                            data-client_id="235879741882-7jnpbc2mhv8nrpdcoch40bk1h8cnvn1p.apps.googleusercontent.com"
+                            data-context="signin"
+                            data-ux_mode="popup"
+                            data-callback="handleCredentialResponse"
+                            data-nonce=""
+                            data-auto_prompt="false">
+                        </div>
+
+                        <div class="g_id_signin"
+                            data-type="icon"
+                            data-shape="circle"
+                            data-theme="outline"
+                            data-text="signin_with"
+                            data-size="large">
+                        </div>
+
+                        <div>
+                            <img id="profile-picture" src="https://cdn-icons-png.flaticon.com/128/8141/8141083.png">
+                        </div>
+                    </div>
+                    <div id="account-name">User</div>
+                    <div id="account-type">Basic</div>
+                </div>
+                <div class="settings-button" id="info">Info</div>
+                <div class="settings-button" id="settings">Settings</div>
+                <div class="settings-button" id="logout">Logout</div>
+            </div>
+        </div>
+    </nav>
+    <div class="map-holder">
+        <div id="plotMap" class="map"></div>
+        <div id="toolbar" class="toolbar">
+            <div id="source-type" class="source-type">
+                <div id="sources-info" class="sources-info">
+                    <div>
+                        <div onclick="createHeatmap(event);" class="source-logo" tabindex="-1" style="background-image: url(https://fvmstatic.s3.amazonaws.com/maps/m/IN-EPS-01-0001.png);" sourceid="all"></div>
+                    </div> 
+                </div>
+            </div>
+            <div id='loc-type' class='loc-type'>
+                <div id="source_list" class="source-list">
+                    <div class="source-logo" id="temp_logo"></div>
+                </div>
+                <div id="news_list" class="news-list">
+                </div>  
+            </div>
+        </div>
+    </div>
+    <script src="javascript/nav.js"></script>
+    <script src="javascript/map.js"></script>
+</body>
+</html>
