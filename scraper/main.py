@@ -299,7 +299,7 @@ def ht():
                     return data
                     #break if article was posted more than 24 hours ago
                 link = 'https://www.hindustantimes.com' + news.select_one('h3.hdg3 > a')['href']
-                image = bs(requests.get(link,headers=agent).content, 'html.parser').select_one('div.fullStory').find("img")['src']
+                image = bs(requests.get(link,headers=agent).content, 'html.parser').select_one('div.storyParagraphFigure').find("img")['src']
                 for place in places:
                     if(re.search("[\/-]"+place+"[\/-]",link,re.IGNORECASE)):
                         addData(data, place, link, title, image)
